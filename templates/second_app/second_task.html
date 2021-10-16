@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mantiqiy savollar</title>
+	<link rel="stylesheet" href="{% static 'second_app/css/second_task.css' %}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+	<div>
+		<div>
+			<a href="{% url 'dashboard' %}">
+				<button
+					style="margin: 10px 0 0 20px; padding: 10px 20px; background-color: #333; color: #fff; border: none; border-radius: 5px;">Orqaga</button>
+			</a>
+		</div>
+		<div class="body">
+			<section>
+				<div id="container">
+					<div class="product-details question_obj_1">
+						<h1>1-Savol</h1>
+
+						<p class="information">
+							{{questions.question1.question}}
+						</p>
+
+						<div class="control">
+							<button class="btn">
+								<span class="price">
+									< _&nbsp;>
+								</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="product-image">
+						<img src="{% static 'second_app/images/math.png' %}" alt="" />
+
+						<div class="info">
+							<h2>Variantlar</h2>
+							<ul>
+								<li class="question1">
+									<strong>A) </strong>
+									<span>{{questions.question1.answers.A}}</span>
+								</li>
+								<li class="question1">
+									<strong>B) </strong>
+									<span>{{questions.question1.answers.B}}</span>
+								</li>
+								<li class="question1">
+									<strong>D) </strong>
+									<span>{{questions.question1.answers.C}}</span>
+								</li>
+								<li class="question1">
+									<strong>E) </strong>
+									<span>{{questions.question1.answers.D}}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="container">
+					<div class="product-details question_obj_2">
+						<h1>2-Savol</h1>
+
+						<p class="information">
+							{{questions.question2.question}}
+						</p>
+
+						<div class="control">
+							<button class="btn">
+								<span class="price">
+									< _&nbsp;>
+								</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="product-image">
+						<img src="{% static 'second_app/images/maths (3).png' %}" alt="" />
+
+						<div class="info">
+							<h2>Variantlar</h2>
+							<ul>
+								<li class="question2">
+									<strong>A) </strong>
+									<span>{{questions.question2.answers.A}}</span>
+								</li>
+								<li class="question2">
+									<strong>B) </strong>
+									<span>{{questions.question2.answers.B}}</span>
+								</li>
+								<li class="question2">
+									<strong>D) </strong>
+									<span>{{questions.question2.answers.C}}</span>
+								</li>
+								<li class="question2">
+									<strong>E) </strong>
+									<span>{{questions.question2.answers.D}}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div id="container">
+					<div class="product-details question_obj_3">
+						<h1>3-Savol</h1>
+
+						<p class="information">
+							{{questions.question3.question}}
+						</p>
+
+						<div class="control">
+							<button class="btn">
+								<span class="price">
+									< _&nbsp;>
+								</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="product-image">
+						<img src="{% static 'second_app/images/books.png' %}" alt="" />
+
+						<div class="info">
+							<h2>Variantlar</h2>
+							<ul>
+								<li class="question3">
+									<strong>A) </strong>
+									<span>{{questions.question3.answers.A}}</span>
+								</li>
+								<li class="question3">
+									<strong>B) </strong>
+									<span>{{questions.question3.answers.B}}</span>
+								</li>
+								<li class="question3">
+									<strong>D) </strong>
+									<span>{{questions.question3.answers.C}}</span>
+								</li>
+								<li class="question3">
+									<strong>E) </strong>
+									<span>{{questions.question3.answers.D}}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="container">
+					<div class="product-details question_obj_4">
+						<h1>4-Savol</h1>
+
+						<p class="information">
+							{{questions.question4.question}}
+						</p>
+
+						<div class="control">
+							<button class="btn">
+								<span class="price">
+									< _&nbsp;>
+								</span>
+							</button>
+						</div>
+					</div>
+
+					<div class="product-image">
+						<img src="{% static 'second_app/images/class (1).png' %}" alt="" />
+
+						<div class="info">
+							<h2>Variantlar</h2>
+							<ul>
+								<li class="question4">
+									<strong>A) </strong>
+									<span>{{questions.question4.answers.A}}</span>
+								</li>
+								<li class="question4">
+									<strong>B) </strong>
+									<span>{{questions.question4.answers.B}}</span>
+								</li>
+								<li class="question4">
+									<strong>D) </strong>
+									<span>{{questions.question4.answers.C}}</span>
+								</li>
+								<li class="question4">
+									<strong>E) </strong>
+									<span>{{questions.question4.answers.D}}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="button-bottom">YAKUNLASH</button>
+			</section>
+		</div>
+	</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function () {
+			let answers = {
+				"question1": "",
+				"question2": "",
+				"question3": "",
+				"question4": "",
+			};
+
+			let matchClass = {
+				"question1": ".question_obj_1 .price",
+				"question2": ".question_obj_2 .price",
+				"question3": ".question_obj_3 .price",
+				"question4": ".question_obj_4 .price",
+			}
+
+			$(".info ul li").on("click", function () {
+				var given_answer = $(this).find('span').text();
+				var className = this.className;
+				answers[className] = given_answer;
+				className = matchClass[className];
+				$(className).text(given_answer);
+			});
+
+			$(".button-bottom").on("click", function () {
+				
+				  $.ajax({
+				  type: "POST",
+				  url: 'check',
+				  data: {
+					  question1: answers['question1'],
+					  question2: answers['question2'],
+					  question3: answers['question3'],
+					  question4: answers['question4'],
+					  csrfmiddlewaretoken: '{{ csrf_token }}'
+				  },
+				  success: function (response) {
+					 alert(response);
+				  },
+			  });
+			});
+		});
+	</script>
+
+</body>
+
+</html>

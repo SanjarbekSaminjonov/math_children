@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xush kelibsiz!</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/home.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-left">
+            <div class="box1">
+                <h1>Matematik <br> savodxonlik!</h1>
+                <div class="box">
+                    <a href="{% url 'login' %}">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Kirish
+                    </a>
+                    <a class="button-bottom" href="{% url 'signup' %}">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Ro'yxatdan o'tish
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-right">
+            <img src="{% static 'dashboard/images/boy.png' %}" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

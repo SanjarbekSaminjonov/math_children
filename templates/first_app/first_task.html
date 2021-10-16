@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noodatiy savollar</title>
+    <link rel="stylesheet" href="{% static 'first_app/css/first_task.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <a href="{% url 'dashboard' %}">
+        <button class="button-top"
+            style="padding: 10px; background-color: rgb(9, 157, 226); border:none; border-radius:5px;"
+            type="submit">Qaytish</button>
+    </a>
+    <form class='progress' method="post" action="{% url 'first_check' %}">
+        {% csrf_token %}
+        <div class="left-image"><img src="{% static 'first_app/images/notes.png' %}" alt=""></div>
+        <div class='progress_inner'>
+            <div class='progress_inner__step'>
+                <label for='step-1'><span>1-</span> Savol</label>
+            </div>
+            <div class='progress_inner__step'>
+                <label for='step-2'><span>2-</span> Savol</label>
+            </div>
+            <div class='progress_inner__step'>
+                <label for='step-3'><span>3-</span> Savol</label>
+            </div>
+            <div class='progress_inner__step'>
+                <label for='step-4'><span>4-</span> Savol</label>
+            </div>
+            <div class='progress_inner__step'>
+                <label for='step-5'><span>5-</span> Savol</label>
+            </div>
+            <input checked='checked' id='step-1' name='step' type='radio'>
+            <input id='step-2' name='step' type='radio'>
+            <input id='step-3' name='step' type='radio'>
+            <input id='step-4' name='step' type='radio'>
+            <input id='step-5' name='step' type='radio'>
+            <div class='progress_inner__bar'></div>
+            <div class='progress_inner__bar--set'></div>
+            <div class='progress_inner__tabs'>
+                <div class='tab tab-0'>
+                    <h1>1-Savol</h1>
+                    <div class="text-img">
+                        <div class="text">
+                            <p>{{question1.question}}</p>
+                        </div>
+                        <div class="img-right">
+                            <img class="image" src="{{question1.question_image.url}}" alt="">
+                        </div>
+                    </div>
+
+                    <label class="label" for="i2"> Javobingizni kiriting !</label>
+                    <input class="input0" id="i2" type="number" name="answer_1">
+
+                </div>
+                <div class='tab tab-1'>
+                    <h1>2-Savol</h1>
+                    <div class="text-img">
+                        <div class="text">
+                            <p>{{question2.question}}</p>
+                        </div>
+                        <div class="img-right">
+                            <img class="image" src="{{question2.question_image.url}}" alt="">
+                        </div>
+                    </div>
+                    <label class="label " for="i3"> Javobingizni kiriting !</label>
+                    <input class="input1" id="i3" type="number" name="answer_2">
+
+                </div>
+                <div class='tab tab-2'>
+                    <h1>3-Savol</h1>
+                    <div class="text-img">
+                        <div class="text">
+                            <p>{{question3.question}}</p>
+                        </div>
+                        <div class="img-right">
+                            <img class="image" src="{{question3.question_image.url}}" alt="">
+                        </div>
+                    </div>
+
+                    <label class="label" for="i4"> Javobingizni kiriting !</label>
+                    <input class="input2" id="i4" type="number" name="answer_3">
+
+                </div>
+                <div class='tab tab-3'>
+                    <h1>4-Savol</h1>
+                    <div class="text-img">
+                        <div class="text">
+                            <p>{{question4.question}}</p>
+                        </div>
+                        <div class="img-right">
+                            <img class="image" src="{{question4.question_image.url}}" alt="">
+                        </div>
+                    </div>
+
+                    <label class="label" for="i3"> Javobingizni kiriting !</label>
+                    <input class="input3" id="i3" type="number" name="answer_4">
+
+                </div>
+                <div class='tab tab-4'>
+                    <h1>5-Savol</h1>
+                    <div class="text-img">
+                        <div class="text">
+                            <p>{{question5.question}}</p>
+                        </div>
+                        <div class="img-right">
+                            <img class="image" src="{{question5.question_image.url}}" alt="">
+                        </div>
+                    </div>
+                    <label class="label" for="i5"> Javobingizni kiriting !</label>
+                    <input class="input4" id="i5" type="number" name="answer_5">
+                    <button type="submit" class="button-finish">Yakunlash</button>
+                </div>
+            </div>
+            <div class='progress_inner__status'>
+                <div class='box_base'></div>
+                <div class='box_lid'></div>
+                <div class='box_ribbon'></div>
+                <div class='box_bow'>
+                    <div class='box_bow__left'></div>
+                    <div class='box_bow__right'></div>
+                </div>
+                <div class='box_item'></div>
+                <div class='box_tag'></div>
+                <div class='box_string'></div>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

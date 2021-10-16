@@ -1,0 +1,256 @@
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --varyDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--veryLightGray);
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(47, 232, 244, 1) 0.1%, rgba(160, 244, 202, 0.86) 57.5%);
+}
+
+.logout {
+    margin: 20px 0 0 -150px;
+    padding: 10px 20px;
+    background-color: rgb(22, 215, 225);
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 10px;
+}
+
+
+
+h1:first-of-type {
+    font-weight: var(--weight1);
+    color: var(--varyDarkBlue);
+
+}
+
+h1:last-of-type {
+    color: var(--varyDarkBlue);
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.header {
+    /* margin-bottom: 100px; */
+    border: 1px solid cadetblue;
+}
+
+.box p {
+    color: var(--grayishBlue);
+}
+
+.box {
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    padding: 30px;
+    margin: 20px;
+}
+
+.img-book {
+    float: right;
+    width: 100px;
+    margin-top: 30px;
+}
+
+.header {
+    max-width: 1000px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 4px 4px 6px 7px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 6px 7px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 6px 7px rgba(34, 60, 80, 0.2);
+}
+
+.right-card {
+    margin: 5px;
+
+}
+
+img {
+    width: 250px;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.one {
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+button {
+    margin-top: 10px;
+
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #02AAB0 0%, #00CDAC 51%, #02AAB0 100%)
+}
+
+.btn-grad {
+    margin: 5px;
+    padding: 10px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    border: none;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.button {
+    background-image: linear-gradient(to right, #AA076B 0%, #61045F 51%, #AA076B 100%)
+}
+
+.button {
+    margin: 10px;
+    padding: 8px 35px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.button:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+@media (max-width: 450px) {
+    .box {
+        height: 200px;
+    }
+
+    .logout {
+        margin: 10px 0 0 -10px;
+        border-radius: 12px;
+    }
+
+    .left-card {
+        flex-direction: column;
+    }
+
+    .one {
+        margin-top: 1px;
+    }
+
+    .img-book {
+        margin: -10px;
+    }
+
+    .btn-grad {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    .box {
+        text-align: center;
+        height: 180px;
+    }
+}
+
+.cyan {
+    border-top: 3px solid var(--cyan);
+}
+
+.red {
+    border-top: 3px solid var(--red);
+}
+
+.blue {
+    border-top: 3px solid var(--blue);
+}
+
+.orange {
+    border-top: 3px solid var(--orange);
+}
+
+h1 {
+    color: var(--varyDarkBlue);
+    font-weight: var(--weight3);
+
+}
+
+
+.left-card {
+    display: flex;
+    justify-content: center;
+    color: #000;
+    font-family: monospace;
+    padding: 40px 0;
+
+}
+
+@media (min-width: 950px) {
+    .right-card>img {
+        width: 170px;
+    }
+
+    .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-down {
+        position: relative;
+        top: 150px;
+    }
+
+    .box {
+        width: 20%;
+
+    }
+
+    .one {
+        padding-right: 40px;
+    }
+}

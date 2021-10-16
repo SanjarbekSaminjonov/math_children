@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bosh sahifa!</title>
+    <link rel="stylesheet" href="{% static 'dashboard/css/dashboard.css' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-card">
+            <a href="{% url 'logout' %}">
+                <button class="logout">Chiqish</button>
+            </a>
+
+            <div class="left-card">
+                {% if request.user.is_superuser %}
+
+                <h1>
+                    <a href="/admin">Nazorat </a>
+                </h1>
+                <h1 class="one">
+                    <a href="/admin">markazi </a>
+                </h1>
+                {% else %}
+                <h1>{{user.first_name}}</h1>
+                <h1 class="one">{{user.last_name}}</h1>
+                {% endif %}
+                <hr>
+
+                <div class="right-card">
+                    <img src="{% static 'dashboard/images/learning.png' %}" alt="main picture">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row1-container">
+        <div class="box box-down cyan">
+            <h2> Nostandart Topshiriq</h2>
+            <p>Monitors activity to identify project roadblocks</p>
+            <img class="img-book" src="{% static 'dashboard/images/book.png' %}" alt="book picture">
+            <a style="text-decoration: none;" href="{% url 'first_task' %}">
+                <button class="btn-grad" type="submit">Kirish</button>
+            </a>
+        </div>
+
+        <div class="box red">
+            <h2>Mantiqiy Topshiriq</h2>
+            <p>Scans our talent network to create the optimal team for your project</p>
+            <img class="img-book" src="{% static 'dashboard/images/book4.png' %}" alt="image book">
+            <a style="text-decoration: none;" href="{% url 'second_task' %}">
+                <button class="btn-grad" type="submit">Kirish</button>
+            </a>
+        </div>
+
+        <div class="box box-down blue">
+            <h2>Kreativ Fikrlash</h2>
+            <p>Uses data from past projects to provide better delivery estimates</p>
+            <img class="img-book" src="{% static 'dashboard/images/maths (2).png' %}" alt="math">
+            <button class="btn-grad" type="submit">Kirish</button>
+        </div>
+    </div>
+    <div class="row2-container">
+        <div class="box orange">
+            <h2>Natijalar</h2>
+            <p>Regularly evaluates our talent to ensure quality</p>
+            <img class="img-book" src="{% static 'dashboard/images/class.png' %}" alt="natija picture">
+            <a style="text-decoration: none;" href="{% url 'results_dashboard' %}">
+                <button class="button" type="submit">Kirish</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

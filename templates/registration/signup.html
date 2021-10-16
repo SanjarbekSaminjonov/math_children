@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro'yxatdan o'tish</title>
+    <link rel="stylesheet" href="{% static 'registration/signup.css' %}">
+</head>
+
+<body style="background-image: radial-gradient( circle 328px at 2.9% 15%,  rgba(191,224,251,1) 0%, rgba(232,233,251,1) 25.8%, rgba(252,239,250,1) 50.8%, rgba(234,251,251,1) 77.6%, rgba(240,251,244,1) 100.7% );">
+
+    <div class="container">
+        <form method="post" id="form">
+            {% csrf_token %}
+            <h2>Ro'yxatdan o'tish</h2>
+            {% for field in form %}
+            <div class="form-control">
+                <label for="id_{{field.name}}">
+                    {{field.label}}
+                </label>
+
+                {{field}}
+
+                <span>{{field.errors}}</span>
+            </div>
+            {% endfor %}
+
+
+            <button class="btn btn-primary btn-sm col-md-3" type="submit">Hisob yaratish</button>
+
+
+            <a class="kirish" href="{% url 'login' %}">Kirish</a>
+
+
+        </form>
+    </div>
+
+</body>
