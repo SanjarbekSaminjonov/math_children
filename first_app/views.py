@@ -33,6 +33,7 @@ def first_task(request):
 def check(request):
 
     if request.method == 'POST':
+
         given_answers = [
             request.POST['answer_1'],
             request.POST['answer_2'],
@@ -41,12 +42,24 @@ def check(request):
             request.POST['answer_5'],
         ]
 
+        true_answers = [
+            question_objects_list[0].question_answer,
+            question_objects_list[1].question_answer,
+            question_objects_list[2].question_answer,
+            question_objects_list[3].question_answer,
+            question_objects_list[4].question_answer,
+        ]
+
+        check_result = list()
+
         count = 0
 
         for i in range(5):
-            print(question_objects_list[i].question_answer, given_answers[i])
-            if str(question_objects_list[i].question_answer) == given_answers[i]:
+            if str(true_answers[i]) == str(given_answers[i]):
                 count += 1
+                check_result.append('To\'g\'ri')
+            else:
+                check_result.append('Noto\'g\'ri')
 
         result, created = AllResult.objects.get_or_create(
             pupil=request.user, type_task=1)
@@ -55,6 +68,12 @@ def check(request):
         result.add_attempt()
         result.save()
 
+        context = {
+            'given_answers': given_answers,
+            'true_answers': true_answers,
+            'check_result': check_result,
+        }
+        
         return HttpResponse(count)
     else:
         return redirect('first_task')

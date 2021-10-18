@@ -6,7 +6,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Natijalar | </title>
+    <title>
+        Natijalar | {{title}}
+    </title>
     <link rel="stylesheet" href="{% static 'results/css/results_table/style.css' %}" />
     <style>
         body {
@@ -24,15 +26,13 @@
                     <p class="box1">Natijalar</p>
                 </div>
                 <form class="section__top-right" method="get">
-                    <input class="section__top-right--input" type="text" name="searching_text" placeholder="Ism kiriting" />
+                    <input class="section__top-right--input" type="text" name="searching_text"
+                        placeholder="Ism kiriting" />
                     <p class="box1">
                         <button type="submit" style="padding: 2px 10px;">Qidirish</button>
                     </p>
                 </form>
             </div>
-
-
-
             <div class="right_card-info-top">
                 <div class="img-left-top">
                     <img class="image-end-top" src="{% static 'results/images/results_images/user-profile.png' %}"
@@ -40,7 +40,6 @@
                     <p>{{user.first_name}}</p>
                     <p>{{user.last_name}}</p>
                 </div>
-
                 <div class="boxs-top">
                     <table>
                         <thead>
@@ -61,10 +60,7 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
-
-
             <div class="section__content">
                 <div>
                     <div class="card__top">
@@ -75,11 +71,12 @@
                         <div>Urinishlar soni</div>
                     </div>
                     <div class="section__content-left">
-                        
+
                         {% for result in task_results %}
                         <div class="card">
                             <div class="user">
-                                <img class="card__img" src="{% static 'results/images/results_images/user.png' %}" alt="" />
+                                <img class="card__img" src="{% static 'results/images/results_images/user.png' %}"
+                                    alt="" />
                                 <div class="user__name">
                                     <p>{{result.pupil.first_name}}</p>
                                     <p>{{result.pupil.last_name}}</p>
@@ -91,169 +88,9 @@
                             <div>{{result.attempt}}</div>
                         </div>
                         {% endfor %}
-
-                        <!-- <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Sanjarbek</p>
-                                    <p>Saminjonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max"> 656</div>
-                            <div>5</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Muhriddin</p>
-                                    <p>Kamoljonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>7</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Sanjarbek</p>
-                                    <p>Saminjonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>6</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Muhriddin</p>
-                                    <p>Kamoljonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>6</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Sanjarbek</p>
-                                    <p>Saminjonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>6</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Muhriddin</p>
-                                    <p>Kamoljonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>6</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Sanjarbek</p>
-                                    <p>Saminjonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>6</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Muhriddin</p>
-                                    <p>Kamoljonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>55</div>
-                            <div class="max">656</div>
-                            <div>5</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Sanjarbek</p>
-                                    <p>Saminjonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>7</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Muhriddin</p>
-                                    <p>Kamoljonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>6</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Sanjarbek</p>
-                                    <p>Saminjonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>34</div>
-                            <div class="max">656</div>
-                            <div>4</div>
-                        </div>
-                        <div class="card">
-                            <div class="user">
-                                <img class="card__img" src="./img/user.png" alt="" />
-                                <div class="user__name">
-                                    <p>Muhriddin</p>
-                                    <p>Kamoljonov</p>
-                                </div>
-                            </div>
-                            <div>53</div>
-                            <div>20</div>
-                            <div class="max">656</div>
-                            <div>6</div>
-                        </div> -->
                     </div>
                 </div>
-
-
                 <div class="section__content-right">
-
                     <div class="right__card">
                         <div class="right_card-info">
                             <div class="boxs">
@@ -281,47 +118,49 @@
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
-
                     </div>
-                    <a href="">
+                    <a href="{% url 'table' 1 %}">
                         <div class="right__card">
                             <div>
-                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}"
+                                    alt="">
                             </div>
                             <div>
-                                <div class="info"><a href="{% url 'table' 1 %}">Nostandart Topshiriq</a></div>
+                                <div class="info">Nostandart Topshiriq</div>
                             </div>
                         </div>
                     </a>
-                    <a href="">
+                    <a href="{% url 'table' 2 %}">
                         <div class="right__card">
                             <div>
-                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}"
+                                    alt="">
                             </div>
                             <div>
-                                <div class="info"><a href="{% url 'table' 2 %}">Mantiqiy Topshiriq</a></div>
+                                <div class="info">Mantiqiy Topshiriq</div>
                             </div>
                         </div>
                     </a>
-                    <a href="">
+                    <a href="{% url 'table' 3 %}">
                         <div class="right__card">
                             <div>
-                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}"
+                                    alt="">
                             </div>
                             <div>
-                                <div class="info"><a href="{% url 'table' 3 %}">Kreativ Fikrlash</a></div>
+                                <div class="info">Kreativ Fikrlash</div>
                             </div>
                         </div>
                     </a>
-                    <a href="">
+                    <a href="{% url 'dashboard' %}">
                         <div class="right__card">
                             <div>
-                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}"
+                                    alt="">
                             </div>
                             <div>
-                                <div class="info"><a href="{% url 'dashboard' %}">Bosh sahifaga qaytish</a></div>
+                                <div class="info">Bosh sahifaga qaytish</div>
                             </div>
                         </div>
                     </a>

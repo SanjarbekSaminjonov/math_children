@@ -14,11 +14,14 @@
 </head>
 
 <body>
-    <a href="{% url 'dashboard' %}">
-        <button class="button-top"
-            style="padding: 10px; background-color: rgb(9, 157, 226); border:none; border-radius:5px;"
-            type="submit">Qaytish</button>
-    </a>
+    <div style="text-align: left;">
+        <a href="{% url 'dashboard' %}">
+            <button class="button-top"
+                style="padding: 10px; background-color: #333; color: #fff; border:none; border-radius:5px; position: relative; top: 10px; left: 20px;">
+                Orqaga
+            </button>
+        </a>
+    </div>
     <form class='progress' method="post" action="{% url 'first_check' %}">
         {% csrf_token %}
         <div class="left-image"><img src="{% static 'first_app/images/notes.png' %}" alt=""></div>

@@ -85,10 +85,15 @@ def second_check(request):
         given_answers.append(str(request.POST['question3']))
         given_answers.append(str(request.POST['question4']))
 
+        check_results = list()
+
         count = 0
         for i in range(4):
             if given_answers[i] == true_answers[i]:
                 count += 1
+                check_results.append('To\'g\'ri')
+            else:
+                check_results.append('Noto\'g\'ri')
 
         result, created = AllResult.objects.get_or_create(
             pupil=request.user, type_task=2)
@@ -96,5 +101,13 @@ def second_check(request):
         result.last_score = count * 25
         result.add_attempt()
         result.save()
+
+        context = {
+            'given_answers': given_answers,
+            'true_answers': true_answers,
+            'check_result': check_results,
+        }
+
+        print(context)
 
         return HttpResponse(count)
