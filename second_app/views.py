@@ -6,6 +6,8 @@ from random import shuffle
 
 # Create your views here.
 
+all_tasks = list()
+
 
 def shuffle_answers(obj):
     answers = [
@@ -58,10 +60,11 @@ def get_objects_second():
         }
     }
 
-    return context
+    global all_tasks
+    all_tasks = context
 
 
-all_tasks = get_objects_second()
+get_objects_second()
 
 
 def second_task(request):
@@ -75,21 +78,21 @@ def second_check(request):
     true_answers = list(all_tasks['true_answers'].values())
 
     if request.method == 'POST':
-        
+
         given_answers = list()
         given_answers.append(str(request.POST['question1']))
         given_answers.append(str(request.POST['question2']))
         given_answers.append(str(request.POST['question3']))
         given_answers.append(str(request.POST['question4']))
-        
+
         count = 0
         for i in range(4):
             if given_answers[i] == true_answers[i]:
                 count += 1
-        
+
         result, created = AllResult.objects.get_or_create(
             pupil=request.user, type_task=2)
-        
+
         result.last_score = count * 25
         result.add_attempt()
         result.save()

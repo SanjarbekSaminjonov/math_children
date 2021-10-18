@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
+from first_app.views import get_questions
+from second_app.views import get_objects_second
+
 # Create your views here.
 
 
@@ -12,4 +15,6 @@ def home(request):
 
 @login_required(login_url='home')
 def dashboard(request):
+    get_questions()
+    get_objects_second()
     return render(request, 'dashboard/dashboard.html')

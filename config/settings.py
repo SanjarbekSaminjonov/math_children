@@ -40,10 +40,11 @@ INSTALLED_APPS = [
 
     'accounts',
     'dashboard',
+    'results',
+
     'first_app',
     'second_app',
-
-    'results',
+    'third_app',
 ]
 
 MIDDLEWARE = [

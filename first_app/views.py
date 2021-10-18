@@ -46,7 +46,6 @@ def check(request):
         for i in range(5):
             print(question_objects_list[i].question_answer, given_answers[i])
             if str(question_objects_list[i].question_answer) == given_answers[i]:
-                print(True)
                 count += 1
 
         result, created = AllResult.objects.get_or_create(
