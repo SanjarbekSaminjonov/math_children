@@ -1,8 +1,6 @@
-from django.db.models.expressions import F
 from django.shortcuts import render
 from dashboard.models import AllResult
-from django.http import JsonResponse, HttpResponse
-import json
+from django.http import HttpResponse
 
 # Create your views here.
 
