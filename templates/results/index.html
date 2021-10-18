@@ -1,0 +1,334 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natijalar | </title>
+    <link rel="stylesheet" href="{% static 'results/css/results_table/style.css' %}" />
+    <style>
+        body {
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="section__top">
+                <div class="section__top-left">
+                    <p class="box1">Natijalar</p>
+                </div>
+                <form class="section__top-right" method="get">
+                    <input class="section__top-right--input" type="text" name="searching_text" placeholder="Ism kiriting" />
+                    <p class="box1">
+                        <button type="submit" style="padding: 2px 10px;">Qidirish</button>
+                    </p>
+                </form>
+            </div>
+
+
+
+            <div class="right_card-info-top">
+                <div class="img-left-top">
+                    <img class="image-end-top" src="{% static 'results/images/results_images/user-profile.png' %}"
+                        alt="">
+                    <p>{{user.first_name}}</p>
+                    <p>{{user.last_name}}</p>
+                </div>
+
+                <div class="boxs-top">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">O`rta</th>
+                                <th scope="col">Yuqori</th>
+                                <th scope="col">So'nggi</th>
+                                <th scope="col">Urinish</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{my_result.avarage_score}}</td>
+                                <td>{{my_result.max_score}}</td>
+                                <td>{{my_result.last_score}}</td>
+                                <td class="box">{{my_result.attempt}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+            <div class="section__content">
+                <div>
+                    <div class="card__top">
+                        <div>Ism Familya</div>
+                        <div>O`rtacha ball</div>
+                        <div>Oxirgi ball</div>
+                        <div class="max">Eng yuqori baxo</div>
+                        <div>Urinishlar soni</div>
+                    </div>
+                    <div class="section__content-left">
+                        
+                        {% for result in task_results %}
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="{% static 'results/images/results_images/user.png' %}" alt="" />
+                                <div class="user__name">
+                                    <p>{{result.pupil.first_name}}</p>
+                                    <p>{{result.pupil.last_name}}</p>
+                                </div>
+                            </div>
+                            <div>{{result.avarage_score}}</div>
+                            <div>{{result.last_score}}</div>
+                            <div class="max">{{result.max_score}}</div>
+                            <div>{{result.attempt}}</div>
+                        </div>
+                        {% endfor %}
+
+                        <!-- <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Sanjarbek</p>
+                                    <p>Saminjonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max"> 656</div>
+                            <div>5</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Muhriddin</p>
+                                    <p>Kamoljonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>7</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Sanjarbek</p>
+                                    <p>Saminjonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>6</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Muhriddin</p>
+                                    <p>Kamoljonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>6</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Sanjarbek</p>
+                                    <p>Saminjonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>6</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Muhriddin</p>
+                                    <p>Kamoljonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>6</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Sanjarbek</p>
+                                    <p>Saminjonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>6</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Muhriddin</p>
+                                    <p>Kamoljonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>55</div>
+                            <div class="max">656</div>
+                            <div>5</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Sanjarbek</p>
+                                    <p>Saminjonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>7</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Muhriddin</p>
+                                    <p>Kamoljonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>6</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Sanjarbek</p>
+                                    <p>Saminjonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>34</div>
+                            <div class="max">656</div>
+                            <div>4</div>
+                        </div>
+                        <div class="card">
+                            <div class="user">
+                                <img class="card__img" src="./img/user.png" alt="" />
+                                <div class="user__name">
+                                    <p>Muhriddin</p>
+                                    <p>Kamoljonov</p>
+                                </div>
+                            </div>
+                            <div>53</div>
+                            <div>20</div>
+                            <div class="max">656</div>
+                            <div>6</div>
+                        </div> -->
+                    </div>
+                </div>
+
+
+                <div class="section__content-right">
+
+                    <div class="right__card">
+                        <div class="right_card-info">
+                            <div class="boxs">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th colspan="4">
+                                                <h2>{{user.first_name}} {{user.last_name}}</h2>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">O`rtacha</th>
+                                            <th scope="col">Yuqori</th>
+                                            <th scope="col">So'nggi</th>
+                                            <th scope="col">Urinishlar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{my_result.avarage_score}}</td>
+                                            <td>{{my_result.max_score}}</td>
+                                            <td>{{my_result.last_score}}</td>
+                                            <td class="box">{{my_result.attempt}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <a href="">
+                        <div class="right__card">
+                            <div>
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                            </div>
+                            <div>
+                                <div class="info"><a href="{% url 'table' 1 %}">Nostandart Topshiriq</a></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="right__card">
+                            <div>
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                            </div>
+                            <div>
+                                <div class="info"><a href="{% url 'table' 2 %}">Mantiqiy Topshiriq</a></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="right__card">
+                            <div>
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                            </div>
+                            <div>
+                                <div class="info"><a href="{% url 'table' 3 %}">Kreativ Fikrlash</a></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="right__card">
+                            <div>
+                                <img class="image-end-1" src="{% static 'results/images/results_images/book.png' %}" alt="">
+                            </div>
+                            <div>
+                                <div class="info"><a href="{% url 'dashboard' %}">Bosh sahifaga qaytish</a></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
