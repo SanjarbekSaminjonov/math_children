@@ -246,7 +246,7 @@
 						csrfmiddlewaretoken: '{{ csrf_token }}'
 					},
 					success: function (response) {
-						alert(response);
+						$("body").replaceWith(response)
 					},
 				});
 			});

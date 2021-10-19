@@ -91,9 +91,9 @@ def check(request):
         for i in range(4):
             if given_answers[i] == true_answers[i]:
                 count += 1
-                check_results.append('To\'g\'ri')
+                check_results.append(True)
             else:
-                check_results.append('Noto\'g\'ri')
+                check_results.append(False)
 
         result, created = AllResult.objects.get_or_create(
             pupil=request.user, type_task=2)
@@ -102,12 +102,16 @@ def check(request):
         result.add_attempt()
         result.save()
 
+        my_result = list()
+
+        for i in range(4):
+            my_result.append({
+                'my_answer': given_answers[i],
+                'true_false': check_results[i]
+            })
+
         context = {
-            'given_answers': given_answers,
-            'true_answers': true_answers,
-            'check_result': check_results,
+            'results': my_result
         }
 
-        print(context)
-
-        return HttpResponse(count)
+        return render(request, 'second_app/result.html', context)
