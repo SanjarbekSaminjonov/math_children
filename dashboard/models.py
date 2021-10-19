@@ -6,19 +6,28 @@ from django.db.models.deletion import CASCADE
 
 
 class AllResult(models.Model):
-    
+
     APP_CHOICES = (
         (1, 'NOSTANDART TOPSHIRIQ'),
         (2, 'MANTIQIY SAVOLLAR'),
         (3, 'KREATIV FIKRLASH'),
     )
 
-    pupil = models.ForeignKey(User, on_delete=CASCADE)
-    type_task = models.IntegerField(choices=APP_CHOICES, default=0)
-    last_score = models.IntegerField(default=0, blank=True, null=True)
-    max_score = models.IntegerField(default=0, blank=True, null=True)
-    avarage_score = models.IntegerField(default=0, blank=True, null=True)
-    attempt = models.IntegerField(default=0, blank=True, null=True)
+    pupil = models.ForeignKey(User, on_delete=CASCADE, verbose_name="O'quvchi")
+    type_task = models.IntegerField(
+        choices=APP_CHOICES, default=0, verbose_name="Topshiriq turi")
+    last_score = models.IntegerField(
+        default=0, blank=True, null=True, verbose_name="Oxirgi natija")
+    max_score = models.IntegerField(
+        default=0, blank=True, null=True, verbose_name="Eng yuqori natija")
+    avarage_score = models.IntegerField(
+        default=0, blank=True, null=True, verbose_name="O'rtacha natija")
+    attempt = models.IntegerField(
+        default=0, blank=True, null=True, verbose_name="Urinishlar soni")
+
+    class Meta:
+        verbose_name = "Natija"
+        verbose_name_plural = "Natijalar"
 
     def add_attempt(self):
         self.avarage_score = round((

@@ -3,4 +3,9 @@ from .models import SecondTask
 
 # Register your models here.
 
-admin.site.register(SecondTask)
+
+@admin.register(SecondTask)
+class SecondTaskAdmin(admin.ModelAdmin):
+    list_display = (
+        'question', 'answer_true',
+    )

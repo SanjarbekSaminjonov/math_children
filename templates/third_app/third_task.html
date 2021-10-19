@@ -1,0 +1,217 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreativ savollar</title>
+    <link rel="stylesheet" href="{% static 'third_app/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <form class="cont_principal" method="post" action="{% url 'third_check' %}"> {% csrf_token %}
+            <div class="cont_central">
+                <div class="cont_modal cont_modal_active">
+                    <div class="cont_photo">
+                        <div class="cont_img_back">
+                            <img src="{{question1.question_image.url}}" alt="" />
+                        </div>
+                    </div>
+                    <div class="cont_text_ingredients">
+                        <div class="cont_over_hidden">
+                            <div class="cont_tabs">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <h4></h4>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <h4>KREATIV</h4>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="cont_text_det_preparation">
+                                <div class="cont_title_preparation">
+                                    <p>1-Savol:</p>
+                                </div>
+                                <div class="cont_info_preparation">
+                                    <p>{{question1.question}}</p>
+                                </div>
+                                <div class="cont_text_det_preparation">
+                                    <div class="cont_title_preparation">
+                                        <p>Javobingizni kiriting:</p>
+                                    </div>
+                                    <div class="imput-info">
+                                        <input type="number" name="answer_1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TWO -->
+            <div id="two" class="cont_principal">
+                <div class="cont_central">
+                    <div class="cont_modal cont_modal_active">
+                        <div class="cont_photo">
+                            <div class="cont_img_back">
+                                <img src="{{question2.question_image.url}}" alt="" />
+                            </div>
+                        </div>
+                        <div class="cont_text_ingredients">
+                            <div class="cont_over_hidden">
+
+                                <div class="cont_tabs">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <h4></h4>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <h4>KREATIV</h4>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="cont_text_det_preparation">
+                                    <div class="cont_title_preparation">
+                                        <p>2-Savol:</p>
+                                    </div>
+                                    <div class="cont_info_preparation">
+                                        <p>{{question2.question}}</p>
+                                    </div>
+                                    <div class="cont_text_det_preparation">
+
+                                        <div class="cont_title_preparation">
+                                            <p>Javobingizni kiriting:</p>
+                                        </div>
+                                        <div class="imput-info">
+                                            <input type="number" name="answer_2">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- thre -->
+                <div id="thre" class="cont_principal">
+                    <div class="cont_central">
+                        <div class="cont_modal cont_modal_active">
+                            <div class="cont_photo">
+                                <div class="cont_img_back">
+                                    <img src="{{question3.question_image.url}}" alt="" />
+                                </div>
+                            </div>
+                            <div class="cont_text_ingredients">
+                                <div class="cont_over_hidden">
+                                    <div class="cont_tabs">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <h4></h4>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <h4>KREATIV</h4>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="cont_text_det_preparation">
+                                        <div class="cont_title_preparation">
+                                            <p>3-Savol:</p>
+                                        </div>
+                                        <div class="cont_info_preparation">
+                                            <p>{{question3.question}}}</p>
+                                        </div>
+                                        <div class="cont_text_det_preparation">
+
+                                            <div class="cont_title_preparation">
+                                                <p>Javobingizni kiriting:</p>
+                                            </div>
+                                            <div class="imput-info">
+                                                <input type="number" name="answer_3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- four -->
+                    <div id="four" class="cont_principal">
+                        <div class="cont_central">
+                            <div class="cont_modal cont_modal_active">
+                                <div class="cont_photo">
+                                    <div class="cont_img_back">
+                                        <img src="{{question4.question_image.url}}" alt="" />
+                                    </div>
+                                    <div class="cont_mins">
+                                        <div class="cont_icon_right">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cont_text_ingredients">
+                                    <div class="cont_over_hidden">
+                                        <div class="cont_tabs">
+                                            <ul>
+                                                <li>
+                                                    <a href="#">
+                                                        <h4></h4>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <h4>KREATIV</h4>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_text_det_preparation">
+                                            <div class="cont_title_preparation">
+                                                <p>4-Savol:</p>
+                                            </div>
+                                            <div class="cont_info_preparation">
+                                                <p>{{question4.question}}</p>
+                                            </div>
+                                            <div class="cont_text_det_preparation">
+                                                <div class="cont_title_preparation">
+                                                    <p>Javobingizni kiriting:</p>
+                                                </div>
+                                                <div class="imput-info">
+                                                    <input type="number" name="answer_4">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <button type="submit">Yakunlash</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

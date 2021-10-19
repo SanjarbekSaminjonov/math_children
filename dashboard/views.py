@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 from first_app.views import get_questions
 from second_app.views import get_objects_second
+from third_app.views import get_questions_third
 
 # Create your views here.
 
@@ -17,4 +18,5 @@ def home(request):
 def dashboard(request):
     get_questions()
     get_objects_second()
+    get_questions_third()
     return render(request, 'dashboard/dashboard.html')

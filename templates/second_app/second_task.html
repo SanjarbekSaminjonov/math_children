@@ -234,21 +234,21 @@
 			});
 
 			$(".button-bottom").on("click", function () {
-				
-				  $.ajax({
-				  type: "POST",
-				  url: 'check',
-				  data: {
-					  question1: answers['question1'],
-					  question2: answers['question2'],
-					  question3: answers['question3'],
-					  question4: answers['question4'],
-					  csrfmiddlewaretoken: '{{ csrf_token }}'
-				  },
-				  success: function (response) {
-					 alert(response);
-				  },
-			  });
+
+				$.ajax({
+					type: "POST",
+					url: 'natija',
+					data: {
+						question1: answers['question1'],
+						question2: answers['question2'],
+						question3: answers['question3'],
+						question4: answers['question4'],
+						csrfmiddlewaretoken: '{{ csrf_token }}'
+					},
+					success: function (response) {
+						alert(response);
+					},
+				});
 			});
 		});
 	</script>

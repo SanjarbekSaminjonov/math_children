@@ -74,7 +74,7 @@ def second_task(request):
     return render(request, 'second_app/second_task.html', context)
 
 
-def second_check(request):
+def check(request):
     true_answers = list(all_tasks['true_answers'].values())
 
     if request.method == 'POST':
